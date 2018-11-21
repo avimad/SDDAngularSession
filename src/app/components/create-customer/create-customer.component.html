@@ -1,0 +1,20 @@
+<div class="row">
+  <form [formGroup]="customerForm" novalidate #fform="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" appHiglight class="form-control" formControlName="firstname" id="firstname" placeholder="First Name">
+      <small *ngIf="formErrors.firstname" >{{formErrors.firstname}}</small>
+    </div>
+    <div class="form-group">
+        <input type="text" appHiglight class="form-control" formControlName="lastname" id="lastname" placeholder="Last Name">
+        <small *ngIf="formErrors.lastname" >{{formErrors.lastname}}</small>
+      </div>
+    <div class="form-group">
+      <input type="email" appHiglight class="form-control" formControlName="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+      <small *ngIf="formErrors.email" >{{formErrors.email}}</small>
+    </div>
+<button type="submit" class="btn btn-primary" [disabled] ="customerForm.invalid">Submit</button>
+</form>
+</div>
+<div class="row">
+  <app-customer-details [customer]="customer" ></app-customer-details>
+</div>

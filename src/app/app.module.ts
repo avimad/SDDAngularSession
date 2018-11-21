@@ -5,16 +5,25 @@ import { MatTableModule } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { CreateCustomerComponent } from './components/create-customer/create-customer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddMrPipe } from './pipe/addMr/add-mr.pipe';
+import { HiglightDirective } from './directive/highlight/higlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    CreateCustomerComponent,
+    AddMrPipe,
+    HiglightDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

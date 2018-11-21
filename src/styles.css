@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+.highlight {
+    background-color: rgb(199, 221, 199);
+    border: 1px solid #512DA8;
+    z-index: 1;
+    transform: scale(1.01);
+  }
