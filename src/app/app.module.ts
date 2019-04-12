@@ -9,6 +9,7 @@ import { CreateCustomerComponent } from './components/create-customer/create-cus
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddMrPipe } from './pipe/addMr/add-mr.pipe';
 import { HiglightDirective } from './directive/highlight/higlight.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HiglightDirective } from './directive/highlight/higlight.directive';
     HttpClientModule,
     MatTableModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Customer } from '../../models/Customer';
 import { DemoService } from 'src/app/services/demo.service';
@@ -8,7 +8,8 @@ import { DemoService } from 'src/app/services/demo.service';
   templateUrl: './create-customer.component.html',
   styleUrls: ['./create-customer.component.css']
 })
-export class CreateCustomerComponent implements OnInit {
+export class CreateCustomerComponent implements OnInit, OnDestroy {
+
   customerForm: FormGroup;
   customer: Customer = {};
   customers: Customer[] = [];
@@ -83,5 +84,7 @@ export class CreateCustomerComponent implements OnInit {
       });
     }, errmess => console.log(errmess));
 
+  }
+  ngOnDestroy(): void {
   }
 }

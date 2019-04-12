@@ -15,6 +15,7 @@
 <button type="submit" class="btn btn-primary" [disabled] ="customerForm.invalid">Submit</button>
 </form>
 </div>
+<a [routerLink]="['/details']"> Go to Details</a>
 <div class="row">
   <app-customer-details [customer]="customer" ></app-customer-details>
 </div>

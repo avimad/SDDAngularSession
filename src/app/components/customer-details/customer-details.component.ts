@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, OnChanges } from '@angular/core';
 import { DemoService } from '../../services/demo.service';
 import { Customer } from 'src/app/models/Customer';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-customer-details',
@@ -10,6 +11,7 @@ import { Customer } from 'src/app/models/Customer';
 export class CustomerDetailsComponent implements OnInit, OnChanges, OnDestroy {
   customers: Customer[] = [];
   @Input() customer: Customer = {};
+  subscription: Subscription;
 
   constructor(private demoservice: DemoService) { }
   ngOnChanges(): void {
@@ -20,12 +22,13 @@ export class CustomerDetailsComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   getCustomers() {
-    this.demoservice.getCustomers().subscribe(res => {
+   this.subscription =  this.demoservice.getCustomers().subscribe(res => {
       this.customers = res;
     }, err => {
       console.log(err);
     });
   }
   ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
