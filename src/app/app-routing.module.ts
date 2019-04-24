@@ -6,8 +6,12 @@ import { CreateCustomerComponent } from './components/create-customer/create-cus
 
 const routes: Routes = [
   {
+    path: 'test',
+    loadChildren: './modules/test/test.module#TestModule'
+  },
+  {
     path: '',
-    component: CreateCustomerComponent
+    component: CreateCustomerComponent,
   },
   {
     path: 'details',
@@ -19,4 +23,4 @@ const routes: Routes = [
   imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
